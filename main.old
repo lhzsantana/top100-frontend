@@ -6,13 +6,15 @@
 		<title>Repúblicas - Compartilhe seu espaço</title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+            <script src="http://connect.facebook.net/en_US/all.js"></script>
 		<![endif]-->
-		<link href="css/styles.css" rel="stylesheet">
+		<link href="../css/styles.css" rel="stylesheet">
 	</head>
 	<body>
+    <div id="fb-root"></div>
 <div class="wrapper">
     <div class="box">
         <div class="row row-offcanvas row-offcanvas-left">
@@ -32,7 +34,7 @@
                 </ul>
                 <ul class="list-unstyled hidden-xs" id="sidebar-footer">
                     <li>
-                      <a href="http://www.bootply.com"><h3>Bootstrap</h3> <i class="glyphicon glyphicon-heart-empty"></i> Bootply</a>
+                      <a href="http://www.bootply.com"><h3>Repúblicas</h3> <i class="glyphicon glyphicon-heart-empty"></i> Bootply</a>
                     </li>
                 </ul>
               
@@ -59,7 +61,7 @@
           				<span class="icon-bar"></span>
           				<span class="icon-bar"></span>
                       </button>
-                      <a href="/" class="navbar-brand logo">b</a>
+                      <a href="/" class="navbar-brand logo">R</a>
                   	</div>
                   	<nav class="collapse navbar-collapse" role="navigation">
                     <form class="navbar-form navbar-left">
@@ -79,6 +81,9 @@
                       </li>
                       <li>
                         <a href="#"><span class="badge">badge</span></a>
+                      </li>
+                      <li ng-controller="MainController">
+                        <button class="badge" ng-click="login()">Login with Facebook</button>
                       </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
@@ -104,11 +109,35 @@
                       	<div class="row">
                           
                          <!-- main col left --> 
-                         <div class="col-sm-5">
-                           
+                         <div class="col-sm-5" ng-controller="FeedController">
+
+
+                             <div ng-repeat="republica in loadRepublicas()" class="panel panel-default">
+
+                                 <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>{{ republica.name }}</h4></div>
+
+                                 <div class="panel-body">
+                                     <img src="//placehold.it/150x150" class="img-circle pull-right"> <a href="#">Keyword: Bootstrap</a>
+                                     <div class="clearfix"></div>
+                                     <hr>
+
+                                     <hr>
+                                     <form>
+                                         <div class="input-group">
+                                             <div class="input-group-btn">
+                                                 <button class="btn btn-default">+1</button><button class="btn btn-default"><i class="glyphicon glyphicon-share"></i></button>
+                                             </div>
+                                             <input type="text" class="form-control" placeholder="Add a comment..">
+                                         </div>
+                                     </form>
+
+                                 </div>
+
+                             </div>
+
                               <div class="panel panel-default">
                                 <div class="panel-thumbnail"><img src="/assets/example/bg_5.jpg" class="img-responsive"></div>
-                                <div class="panel-body">
+                                <div class="panel-body list-group-item">
                                   <p class="lead">Urbanization</p>
                                   <p>45 Followers, 13 Posts</p>
                                   
@@ -116,6 +145,15 @@
                                     <img src="https://lh3.googleusercontent.com/uFp_tsTJboUY7kue5XAsGA=s28" width="28px" height="28px">
                                   </p>
                                 </div>
+                                  <div class="panel-body list-group-item">
+                                      <p class="lead">Urbanization</p>
+                                      <p>45 Followers, 13 Posts</p>
+
+                                      <p>
+                                          <img src="https://lh3.googleusercontent.com/uFp_tsTJboUY7kue5XAsGA=s28" width="28px" height="28px">
+                                      </p>
+                                  </div>
+
                               </div>
 
                            
@@ -163,6 +201,7 @@
                           
                           <!-- main col right -->
                           <div class="col-sm-7">
+
                                
                                 <div class="well"> 
                                    <form class="form">
@@ -296,7 +335,7 @@
 </div>
 	<!-- script references -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/scripts.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/scripts.js"></script>
 	</body>
 </html>
