@@ -52,13 +52,11 @@
                             </li>
                             <li>
                                 <a href="#postModal" role="button" data-toggle="modal"><i
-                                        class="glyphicon glyphicon-plus"></i> Post</a>
+                                        class="glyphicon glyphicon-plus"></i> Criar uma nova República</a>
                             </li>
                             <li>
-                                <a href="#"><span class="badge">badge</span></a>
-                            </li>
-                            <li ng-controller="MainController">
-                                <button class="badge" ng-click="login()">Login with Facebook</button>
+                                <a href="#postModal" role="button" data-toggle="modal"><i
+                                        class="glyphicon glyphicon-plus"></i> Minha República</a>
                             </li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
@@ -66,6 +64,7 @@
                                 <span href="#" class="dropdown-toggle" data-toggle="dropdown"><i
                                         class="glyphicon glyphicon-user"></i></span>
                                 <ul class="dropdown-menu">
+                                    <li ng-click="login()"><a href="">Logar</a></li>
                                     <li><a href="">Editar perfil</a></li>
                                     <li><a href="">Sair</a></li>
                                 </ul>
