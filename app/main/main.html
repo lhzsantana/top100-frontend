@@ -48,7 +48,8 @@
                         </form>
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+                                        class="glyphicon glyphicon-user"></i></a>
                                 <ul class="dropdown-menu">
                                     <li ng-click="login()"><a href="">Entrar/a></li>
                                     <li><a href="">Editar perfil</a></li>
@@ -61,7 +62,7 @@
                                 <a href="#"><i class="glyphicon glyphicon-home"></i> Início</a>
                             </li>
                             <li>
-                                <a href="#postModal" role="button" data-toggle="modal"><i
+                                <a href="#" ng-click="newRepublica()" role="button" data-toggle="modal"><i
                                         class="glyphicon glyphicon-plus"></i> Criar uma nova República</a>
                             </li>
                             <li>
@@ -87,9 +88,12 @@
                                     <form class="form-horizontal" role="form">
 
                                         <div class="form-group" style="padding:14px;">
-                                            <textarea ng-model="user.idea" class="form-control" placeholder="Compartilhe uma ideia"></textarea>
+                                            <textarea ng-model="user.idea" class="form-control"
+                                                      placeholder="Compartilhe uma ideia"></textarea>
                                         </div>
-                                        <button class="btn btn-primary pull-right" type="button" ng-click="share()">Compartilhar</button>
+                                        <button class="btn btn-primary pull-right" type="button" ng-click="share()">
+                                            Compartilhar
+                                        </button>
                                         <ul class="list-inline">
                                             <li><a href=""><i class="glyphicon glyphicon-upload"></i></a></li>
                                             <li><a href=""><i class="glyphicon glyphicon-camera"></i></a></li>
@@ -126,11 +130,11 @@
                             </div>
 
                             <!-- main col right -->
-                            <div class="col-sm-6" >
+                            <div class="col-sm-6">
 
                                 <div ng-repeat="republica in loadRepublicas()" class="panel panel-default">
 
-                                    <div class="panel-heading"> <h4>{{
+                                    <div class="panel-heading"><h4>{{
                                         republica.name }}</h4></div>
 
                                     <div class="panel-body">
@@ -154,6 +158,8 @@
                                 </div>
 
                             </div>
+
+                            <div ng-include="'main/newRepublica.html'"></div>
 
                         </div>
                         <!--/row-->
@@ -190,40 +196,9 @@
     </div>
 </div>
 
-
-<!--post modal-->
-<div id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                Update Status
-            </div>
-            <div class="modal-body">
-                <form class="form center-block">
-                    <div class="form-group">
-                        <textarea class="form-control input-lg" autofocus=""
-                                  placeholder="What do you want to share?"></textarea>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <div>
-                    <button class="btn btn-primary btn-sm" data-dismiss="modal" aria-hidden="true">Post</button>
-                    <ul class="pull-left list-inline">
-                        <li><a href=""><i class="glyphicon glyphicon-upload"></i></a></li>
-                        <li><a href=""><i class="glyphicon glyphicon-camera"></i></a></li>
-                        <li><a href=""><i class="glyphicon glyphicon-map-marker"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 <!-- script references -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-<script src="../../js/bootstrap.min.js"></script>
-<script src="../../js/scripts.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/scripts.js"></script>
 </body>
 </html>
