@@ -1,0 +1,30 @@
+
+<div style="width: 100%" ng-include="'views/nav.html'"></div>
+
+<div class="full col-sm-9">
+
+    <div class="panel panel-default">
+
+        <div class="panel-heading"><h4>Criar nova República</h4></div>
+
+        <div class="clearfix"></div>
+
+        <div class="panel-body">
+            <form class="form center-block">
+                <div class="input-group">
+                    <input class="form-control input-lg" type="text" ng-model="republica.name"
+                           placeholder="Nome da república"/>
+                    <input class="form-control input-lg" type="text" ng-model="republica.address"
+                           placeholder="Endereço (vamos tentar encontrar no Google Maps)"/>
+
+                <textarea class="form-control input-lg" type="text" ng-model="republica.description"
+                          placeholder="Descreva sua república (com detalhes, sua mãe não está olhando :))"></textarea>
+
+                    <button class="btn btn-primary pull-right" type="button" ng-click="newRepublica()">
+                        Inserir
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
