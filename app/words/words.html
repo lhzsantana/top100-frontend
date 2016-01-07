@@ -1,5 +1,5 @@
 
-<div style="width: 100%" ng-include="'views/nav.html'"></div>
+<div style="width: 100%" ng-include="'views/header.html'"></div>
 
 <div class="padding">
     <div class="full col-sm-12">
@@ -9,14 +9,15 @@
 
             <!-- main col left -->
 
-            <div class="col-sm-12" ng-controller="FeedController">
+            <div class="col-sm-12">
 
                 <div class="well" ng-if="logged">
                     <form class="form-horizontal" role="form">
 
                         <div class="form-group" style="padding:14px;">
-                                                <textarea ng-model="user.idea" class="form-control"
-                                                          placeholder="Compartilhe uma ideia"></textarea>
+                            <textarea ng-model="user.idea" class="form-control" placeholder="Compartilhe uma ideia">
+
+                            </textarea>
                         </div>
                         <button class="btn btn-primary pull-right" type="button" ng-click="share()">
                             Compartilhar
@@ -29,7 +30,7 @@
                     </form>
                 </div>
 
-                <div ng-repeat="new in loadNews()" class="panel panel-default">
+                <div ng-repeat="new in load()" class="panel panel-default">
 
                     <div class="panel-heading"><h4>{{ new.title }}</h4></div>
 
