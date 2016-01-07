@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('myApp.main', ['ngRoute'])
-.controller("MainController", [
+.controller("WordController", [
 	'$scope','$location',
     function($scope, $location){
 
