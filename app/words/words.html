@@ -1,61 +1,40 @@
-
 <div style="width: 100%" ng-include="'views/header.html'"></div>
 
 <div class="padding">
     <div class="full col-sm-12">
 
         <!-- content -->
-        <div class="row">
-
+        <div ng-repeat="day in load()" class="row">
+            {{day.date}}
             <!-- main col left -->
-
             <div class="col-sm-12">
 
-                <div class="well" ng-if="logged">
-                    <form class="form-horizontal" role="form">
+                <div class="col-sm-2" ng-repeat="word in day.words">
 
-                        <div class="form-group" style="padding:14px;">
-                            <textarea ng-model="user.idea" class="form-control" placeholder="Compartilhe uma ideia">
+                    <div class="panel panel-default">
 
-                            </textarea>
-                        </div>
-                        <button class="btn btn-primary pull-right" type="button" ng-click="share()">
-                            Compartilhar
-                        </button>
-                        <ul class="list-inline">
-                            <li><a href=""><i class="glyphicon glyphicon-upload"></i></a></li>
-                            <li><a href=""><i class="glyphicon glyphicon-camera"></i></a></li>
-                            <li><a href=""><i class="glyphicon glyphicon-map-marker"></i></a></li>
-                        </ul>
-                    </form>
-                </div>
+                        <div class="panel-heading"><h4>{{ word.title }}</h4></div>
 
-                <div ng-repeat="new in load()" class="panel panel-default">
+                        <div class="panel-body">
+                            {{ word.description }}</a>
 
-                    <div class="panel-heading"><h4>{{ new.title }}</h4></div>
-
-                    <div class="panel-body">
-                        {{ new.description }}</a>
-
-                        <div class="clearfix"></div>
-                        <form>
-                            <div class="input-group" ng-if="logged">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-default" ng-click="like()">+1</button>
+                            <div class="clearfix"></div>
+                            <form>
+                                <div class="input-group" ng-if="logged">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-default" ng-click="like()">+1</button>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Add a comment..">
                                 </div>
-                                <input type="text" class="form-control" placeholder="Add a comment..">
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
-
                 </div>
-
-                <div class="panel panel-default">
-                    <div class="panel-heading"><a href="#">Ver mais...</a></div>
-                </div>
-
             </div>
+        </div>
 
+        <div class="panel panel-default">
+            <div class="panel-heading"><a href="#">Ver mais...</a></div>
         </div>
 
         <div style="width: 100%" ng-include="'views/footer.html'"></div>
